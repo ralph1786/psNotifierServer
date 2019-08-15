@@ -1,11 +1,15 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 
 //Initialize express
 const app = express();
 
 //Use express built-in body parser
 app.use(express.json());
+
+//Fixes CORS issue with client
+app.use(cors());
 
 //Used api.github.com/gists/ to search for specific gist
 const githubGistApi = "https://api.github.com/gists/";
